@@ -45,7 +45,7 @@ const Experience: React.FC<ExperienceProps> = ({ experienceRef, experienceProgre
                             year="2019 - 2019"
                             title="CCNA Bootcamp"
                             subtitle="Networking NP"
-                            description="Gain good insights about CISCO routers and switches and have sufficient knowledge to use CISCO devices."
+                            description="Gained good insights about CISCO routers and switches and have sufficient knowledge to use CISCO devices."
                         />
                     </div>
                 </div>

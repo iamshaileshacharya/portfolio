@@ -1,4 +1,3 @@
-// components/Navigation.tsx
 import React from 'react'
 import { Briefcase, Code, Folder, GraduationCap, Moon, Sun, Trophy, User } from 'lucide-react'
 import Link from 'next/link'
@@ -41,6 +40,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, 
                                         ? 'bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent'
                                         : ''
                                         }`}
+                                    aria-label={name}
                                 >
                                     <Icon
                                         className={`w-5 h-5 sm:mr-2 ${activeSection === name.toLowerCase()
@@ -52,6 +52,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, 
                                                 ? { filter: 'url(#blue-to-purple)' }
                                                 : {}
                                         }
+                                        aria-hidden="true"
                                     />
                                     <span className="hidden sm:inline">{name}</span>
                                 </Link>
@@ -60,6 +61,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, 
                                         ? 'scale-x-100'
                                         : 'group-hover:scale-x-100'
                                         }`}
+                                    aria-hidden="true"
                                 ></span>
                             </li>
                         ))}
@@ -67,11 +69,12 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, 
                             <button
                                 onClick={toggleDarkMode}
                                 className="p-2 rounded-full hover:bg-gray-200/50 dark:hover:bg-gray-800/50 transition-colors duration-300 flex items-center justify-center"
+                                aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
                             >
                                 {isDarkMode ? (
-                                    <Sun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                                    <Sun className="w-5 h-5 text-gray-600 dark:text-gray-300" aria-hidden="true" />
                                 ) : (
-                                    <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                                    <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" aria-hidden="true" />
                                 )}
                             </button>
                         </li>

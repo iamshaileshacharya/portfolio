@@ -27,19 +27,19 @@ const Education: React.FC<EducationProps> = ({ educationRef, educationProgress }
                             year="2023 - Present"
                             title="MSC. CSIT"
                             subtitle=" TU, CDCSIT"
-                            description="Machine Learning, Algorithm omplexities, Fuzzy System, Genetic Algorithm, Advance OS."
+                            description="Machine Learning, Algorithm complexities, Fuzzy System, Genetic Algorithm, Advanced OS."
                         />
                         <TimelineCard
                             year="2020 - 2024"
                             title="Online Coursework"
-                            subtitle="Coursera, scrimba, Udemy"
+                            subtitle="Coursera, Scrimba, Udemy"
                             description="HTML, CSS, JS, Python, HUGO, Digital marketing, SEO, Cloud Computing, Networking."
                         />
                         <TimelineCard
                             year="2016 - 2020"
                             title="BSC. CSIT"
                             subtitle="TU, Butwal Multiple Campus"
-                            description="Learned the fundamentals of Data Structures, Database, Operating system, AI, SDLC."
+                            description="Learned the fundamentals of Data Structures, Database, Operating System, AI, SDLC."
                         />
                     </div>
                 </div>

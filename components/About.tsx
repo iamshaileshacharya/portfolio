@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { FileText, Github, Linkedin, Mail } from 'lucide-react'
 import ResumeModal from './ResumeModal'
 
@@ -30,10 +30,12 @@ const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
                                     <Image
                                         src="/profile.jpg"
                                         alt="Profile picture"
-                                        width={300}
-                                        height={300}
+                                        width={112}
+                                        height={112}
                                         className="rounded-full object-cover"
                                         priority
+                                        quality={85}
+                                        sizes="(max-width: 640px) 96px, 112px"
                                     />
                                 </div>
                             </div>
