@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tags, ima
     return (
         <>
             <div
-                className="group relative overflow-hidden rounded-xl backdrop-blur-md bg-white/10 dark:bg-black/30 border border-white/20 dark:border-gray-800/20 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-[1.02] cursor-pointer p-4 sm:p-6"
+                className="group relative overflow-hidden rounded-xl backdrop-blur-md bg-white/30 dark:bg-black/30 border border-white/20 dark:border-gray-800/20 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] transition-all duration-300 hover:scale-[1.02] cursor-pointer p-4 sm:p-6"
                 onClick={() => setShowImage(true)}
                 role="button"
                 tabIndex={0}
@@ -31,7 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tags, ima
                         {tags.map((tag, index) => (
                             <span
                                 key={index}
-                                className="px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-xs sm:text-sm transition-all duration-300 transform hover:from-rose-400 hover:to-blue-500"
+                                className="px-2 sm:px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-xs sm:text-sm transition-all duration-300 transform hover:from-blue-500 hover:to-rose-500"
                             >
                                 {tag}
                             </span>
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tags, ima
                 </div>
                 {image && (
                     <div
-                        className={`absolute top-2 right-2 p-2 rounded-full bg-blue-500/50 text-white 
+                        className={`absolute top-2 right-2 p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white 
             ${isTouch ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} 
             transition-opacity duration-200`}
                     >

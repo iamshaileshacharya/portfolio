@@ -30,9 +30,9 @@ const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
                                     <Image
                                         src="/profile.jpg"
                                         alt="Profile picture"
-                                        width={300}  // Set appropriate width
-                                        height={300} // Set appropriate height
-                                        className="rounded-full object-cover"  // Move objectFit to className
+                                        width={300}
+                                        height={300}
+                                        className="rounded-full object-cover"
                                         priority
                                     />
                                 </div>
@@ -50,7 +50,7 @@ const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
                 </div>
 
                 <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto sm:mx-0 text-center sm:text-left">
-                    Currently pursuing my Master&apos;s in Computer Science, I&apos;m an enthusiastic programmer who loves to explore technology&apos;s endless possibilities. From building websites to understanding machine learning, I embrace each learning opportunity with genuine curiosity. My journey spans across various domains, web development, cloud computing, and digital marketing – where I&apos;m constantly learning and growing.
+                    Currently pursuing my Master&apos;s in Computer Science, I&apos;m an enthusiastic programmer who loves to explore technology&apos;s endless possibilities. From building websites to understanding machine learning, I embrace each learning opportunity with genuine curiosity. My journey spans across various domains, web development, cloud computing, and digital marketing \u2013 where I&apos;m constantly learning and growing.
                 </p>
 
                 <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4">

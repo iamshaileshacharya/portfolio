@@ -33,12 +33,16 @@ const ImageDialog: React.FC<ImageDialogProps> = ({ isOpen, onClose, title, image
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div ref={dialogRef} className="bg-white dark:bg-gray-800 rounded-lg max-w-3xl w-full overflow-hidden">
-                <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+            <div
+                ref={dialogRef}
+                className="bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-lg max-w-3xl w-full overflow-hidden shadow-xl"
+            >
+                <div className="flex justify-between items-center p-4 border-b border-gray-200/30 dark:border-gray-700/30">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
                     <button
                         onClick={onClose}
-                        className="p-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-400 hover:to-rose-400 transition-all duration-300"
+                        className="p-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-500 hover:to-rose-500 transition-all duration-300"
+                        aria-label="Close dialog"
                     >
                         <X size={24} className="text-white" />
                     </button>
@@ -61,7 +65,7 @@ const ImageDialog: React.FC<ImageDialogProps> = ({ isOpen, onClose, title, image
                             rel="noopener noreferrer"
                             className="flex items-center px-4 py-2 rounded-lg text-white 
                             bg-gradient-to-r from-blue-500 to-purple-600 
-                            hover:from-blue-400 hover:to-rose-400 
+                            hover:from-blue-500 hover:to-rose-500 
                             transition-all duration-300"
                         >
                             <Github size={20} className="mr-2" />
