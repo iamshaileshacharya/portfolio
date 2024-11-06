@@ -112,7 +112,7 @@ export default function Home() {
         <div className="fixed top-1/2 right-1/3 w-96 h-96 bg-purple-400/20 dark:bg-purple-500/10 rounded-full blur-3xl -z-5"></div>
 
         <Navigation activeSection={activeSection} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-        <About isVisible={isVisible} isDarkMode={isDarkMode} />
+        <About isDarkMode={isDarkMode} />
         <Experience experienceRef={experienceRef} experienceProgress={experienceProgress} />
         <Education educationRef={educationRef} educationProgress={educationProgress} />
         <Skills />
