@@ -43,7 +43,7 @@ const Projects: React.FC<ProjectsProps> = ({ isTouch }) => {
                         tags={['Next.js', 'Tailwind CSS', 'TypeScript']}
                         image="/projects/current_website.png"
                         isTouch={isTouch}
-                        githubUrl="https://github.com/yourusername/blockchain-voting"
+                        githubUrl="https://github.com/iamshaileshacharya/portfolio"
                     />
                 </div>
             </div>
