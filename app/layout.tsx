@@ -4,7 +4,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { portfolioData } from '../portfolioData'
-import { Analytics } from "@vercel/analytics/react"
+
 const inter = Inter({ subsets: ['latin'], weight: ['400', '700'], display: 'swap', variable: '--font-inter' })
 
 export const metadata: Metadata = {
@@ -25,10 +25,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioData) }}
         />
       </head>
-      <body>
-        {children}
-        <Analytics />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
