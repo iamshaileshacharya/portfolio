@@ -11,7 +11,7 @@ const Achievements: React.FC<AchievementsProps> = ({ isTouch }) => {
         <section id="achievements" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900">
             <div className="container mx-auto max-w-4xl">
                 <h2 className="text-3xl font-medium mb-12 text-center text-gray-800 dark:text-white">
-                    Featured Certifications
+                    Featured Achievements
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <AchievementCard

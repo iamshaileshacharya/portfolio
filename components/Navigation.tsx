@@ -7,9 +7,10 @@ interface NavigationProps {
     activeSection: string
     toggleDarkMode: () => void
     isDarkMode: boolean
+    setActiveSection: (section: string) => void
 }
 
-const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, isDarkMode }) => {
+const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, isDarkMode, setActiveSection }) => {
     const scrollTo = useSmoothScroll();
 
     const navLinks = [
@@ -23,7 +24,9 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, toggleDarkMode, 
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault()
-        scrollTo(href.slice(1))  // remove the '#' from the href
+        const section = href.slice(1) // remove the '#' from the href
+        setActiveSection(section)
+        scrollTo(section)
     }
 
     return (

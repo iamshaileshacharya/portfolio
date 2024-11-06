@@ -1,5 +1,3 @@
-// app/page.tsx
-
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
@@ -56,44 +54,49 @@ export default function Home() {
     }
   }, [updateTheme, isSystemPreference])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'experience', 'education', 'skills', 'projects', 'achievements']
-      let current = ''
+  const handleScroll = useCallback(() => {
+    const sections = ['about', 'experience', 'education', 'skills', 'projects', 'achievements']
+    let current = ''
 
-      sections.forEach((section) => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            current = section
-          }
+    for (let i = 0; i < sections.length; i++) {
+      const element = document.getElementById(sections[i])
+      if (element) {
+        const rect = element.getBoundingClientRect()
+        const topThreshold = window.innerHeight * 0.2 // 20% of the viewport height
+        const bottomThreshold = window.innerHeight * 0.8 // 80% of the viewport height
+        const isVisible =
+          rect.top <= bottomThreshold && rect.bottom >= topThreshold
+        if (isVisible) {
+          current = sections[i]
+          break
         }
-      })
-
-      setActiveSection(current)
-
-      if (experienceRef.current) {
-        const rect = experienceRef.current.getBoundingClientRect()
-        const windowHeight = window.innerHeight
-        const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top)
-        const progress = (visibleHeight / rect.height) * 100
-        setExperienceProgress(Math.min(100, Math.max(0, progress)))
-      }
-
-      if (educationRef.current) {
-        const rect = educationRef.current.getBoundingClientRect()
-        const windowHeight = window.innerHeight
-        const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top)
-        const progress = (visibleHeight / rect.height) * 100
-        setEducationProgress(Math.min(100, Math.max(0, progress)))
       }
     }
 
+    setActiveSection(current)
+
+    if (experienceRef.current) {
+      const rect = experienceRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top)
+      const progress = (visibleHeight / rect.height) * 100
+      setExperienceProgress(Math.min(100, Math.max(0, progress)))
+    }
+
+    if (educationRef.current) {
+      const rect = educationRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      const visibleHeight = Math.min(windowHeight, rect.bottom) - Math.max(0, rect.top)
+      const progress = (visibleHeight / rect.height) * 100
+      setEducationProgress(Math.min(100, Math.max(0, progress)))
+    }
+  }, [experienceRef, educationRef])
+
+  useEffect(() => {
     setIsVisible(true)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [handleScroll])
 
   const toggleDarkMode = () => {
     setIsSystemPreference(false)
@@ -111,8 +114,13 @@ export default function Home() {
         <div className="fixed top-1/4 left-1/4 w-64 h-64 bg-blue-400/20 dark:bg-blue-500/10 rounded-full blur-3xl -z-5"></div>
         <div className="fixed top-1/2 right-1/3 w-96 h-96 bg-purple-400/20 dark:bg-purple-500/10 rounded-full blur-3xl -z-5"></div>
 
-        <Navigation activeSection={activeSection} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-        <About isDarkMode={isDarkMode} />
+        <Navigation
+          activeSection={activeSection}
+          toggleDarkMode={toggleDarkMode}
+          isDarkMode={isDarkMode}
+          setActiveSection={setActiveSection}
+        />
+        <About isVisible={isVisible} isDarkMode={isDarkMode} />
         <Experience experienceRef={experienceRef} experienceProgress={experienceProgress} />
         <Education educationRef={educationRef} educationProgress={educationProgress} />
         <Skills />

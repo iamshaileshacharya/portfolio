@@ -1,16 +1,19 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+import type { Configuration, RuleSetRule, webpack } from 'webpack';
+import TerserPlugin from 'terser-webpack-plugin';
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   devIndicators: {
     appIsrStatus: false,
   },
   images: {
-    unoptimized: false, // Set to true if you want to disable Next.js image optimization
+    unoptimized: false,
   },
   async headers() {
     return [
       {
-        source: '/(.*)', // Apply these headers to all routes
+        source: '/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -18,8 +21,29 @@ const nextConfig = {
           },
         ],
       },
-    ]
+    ];
   },
-}
+  compress: true, // Enable Gzip compression
+  webpack: (config: Configuration, options: WebpackConfigContext): Configuration => {
+    if (config.optimization && config.optimization.minimizer) {
+      config.optimization.minimizer.push(
+        new TerserPlugin({
+          terserOptions: {
+            compress: {
+              drop_console: true,
+            },
+          },
+        })
+      );
+    }
 
-module.exports = nextConfig
+    return config;
+  },
+};
+
+export default nextConfig;
+
+type WebpackConfigContext = {
+  webpack: typeof webpack;
+  defaultLoaders: Record<string, RuleSetRule>;
+};
