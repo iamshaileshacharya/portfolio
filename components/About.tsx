@@ -1,15 +1,38 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from "next/image"
 import { FileText, Github, Linkedin, Mail } from 'lucide-react'
 import ResumeModal from './ResumeModal'
 
 interface AboutProps {
-    isVisible: boolean;
     isDarkMode: boolean;
 }
 
-const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
+const About: React.FC<AboutProps> = ({ isDarkMode }) => {
     const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) {
+                observer.unobserve(ref.current);
+            }
+        };
+    }, []);
 
     const socialLinks = [
         { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/shailesh-acharya' },
@@ -18,8 +41,8 @@ const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
     ];
 
     return (
-        <section id="about" className="pt-40 sm:pt-56 pb-16 sm:pb-20 px-4">
-            <div className={`container mx-auto max-w-4xl transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+        <section ref={ref} id="about" className="pt-40 sm:pt-56 pb-16 sm:pb-20 px-4">
+            <div className={`container mx-auto max-w-4xl ${isVisible ? 'animate-fade-in-up' : ''}`}>
                 <div className="flex flex-col sm:flex-row items-center mb-8">
                     <div className="w-full sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">
                         <div className="relative group mx-auto sm:mx-0" style={{ width: 'fit-content' }}>
@@ -52,7 +75,7 @@ const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
                 </div>
 
                 <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto sm:mx-0 text-center sm:text-left">
-                    Currently pursuing my Master&apos;s in Computer Science, I&apos;m an enthusiastic programmer who loves to explore technology&apos;s endless possibilities. From building websites to understanding machine learning, I embrace each learning opportunity with genuine curiosity. My journey spans across various domains, web development, cloud computing, and digital marketing \u2013 where I&apos;m constantly learning and growing.
+                    Currently pursuing my Master&apos;s in Computer Science, I&apos;m an enthusiastic programmer who loves to explore technology&apos;s endless possibilities. From building websites to understanding machine learning, I embrace each learning opportunity with genuine curiosity. My journey spans across various domains, web development, cloud computing, and digital marketing – where I&apos;m constantly learning and growing.
                 </p>
 
                 <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4">
