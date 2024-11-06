@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Eye } from 'lucide-react'
 import ImageDialog from './ImageDialog'
 
 interface ProjectCardProps {
@@ -40,17 +39,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, tags, ima
                 </div>
                 {image && (
                     <div
-                        className={`absolute top-2 right-2 p-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white 
-            ${isTouch ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} 
-            transition-opacity duration-200`}
+                        className={`absolute top-1.5 right-1.5 px-2 py-1 rounded
+        bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm
+        border border-gray-200/30 dark:border-gray-700/30
+        text-xs font-medium text-gray-800 dark:text-white
+        shadow-sm transition-opacity duration-300
+        ${isTouch ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}
+        sm:px-3 sm:py-1.5 sm:text-sm`}
+                        aria-label="View image"
                     >
-                        <Eye size={18} />
+                        View
                     </div>
-                )}
-                {isTouch && (
-                    <span className="absolute bottom-2 right-2 text-xs text-gray-400">
-                        Tap to view
-                    </span>
                 )}
             </div>
             <ImageDialog
