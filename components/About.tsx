@@ -66,7 +66,7 @@ const About: React.FC<AboutProps> = ({ isVisible, isDarkMode }) => {
                 </div>
 
                 <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto sm:mx-0 text-center sm:text-left">
-                    Currently pursuing my Master&apos;s in Computer Science, I&apos;m an enthusiastic programmer who loves to explore technology&apos;s endless possibilities. From building websites to understanding machine learning, I embrace each learning opportunity with genuine curiosity. My journey spans across various domains, web development, cloud computing, and digital marketing \u2013 where I&apos;m constantly learning and growing.
+                    I&apos;m currently pursuing my Master&apos;s in Computer Science and am an enthusiastic programmer passionate about exploring technology&apos;s limitless possibilities. My journey spans various domains &ndash; from web development and cloud computing to SEO, networking, and cybersecurity Whether I&apos;m building websites or delving into machine learning algorithms, I approach each learning opportunity with genuine curiosity and dedication. Through hands-on experience and continuous learning, I&apos;m constantly expanding my technical expertise and embracing new challenges in the ever &ndash; evolving tech landscape.
                 </p>
 
                 <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4">
