@@ -26,17 +26,7 @@ export const portfolioData = {
         "name": "Butwal Multiple Campus",
         "sameAs": "https://bumc.edu.np/"
     },
-    // "worksFor": {
-    //     "@type": "Organization",
-    //     "name": "Tech Innovations Inc.",
-    //     "sameAs": "https://www.techinnovations.com"
-    // },
     "knowsAbout": ["AWS/Azure", "Git", "HTML/CSS", "Python", "Machine Learning", "Cloud Computing", "HUGO", "Next.js", "Tailwind CSS", "SEO", "WordPress"],
-    // "hasOccupation": {
-    //     "@type": "Occupation",
-    //     "name": "Full Stack Developer",
-    //     "skills": "Web Development, Mobile App Development, Cloud Architecture, Machine Learning"
-    // },
     "makesOffer": [
         {
             "@type": "Offer",
@@ -85,7 +75,29 @@ export const portfolioData = {
                     "item": {
                         "@type": "Course",
                         "name": "Education",
-                        "description": "Master's in Computer Science, Tribhuvan University, CDCSIT (2023-Present)"
+                        "description": "Master's in Computer Science, Tribhuvan University, CDCSIT (2023-Present)",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Tribhuvan University",
+                            "sameAs": "https://cdcsit.edu.np/"
+                        },
+                        "hasCourseInstance": {
+                            "@type": "CourseInstance",
+                            "courseMode": "full-time",
+                            "instructor": {
+                                "@type": "Person",
+                                "name": "Department of Computer Science"
+                            },
+                            "offers": {
+                                "@type": "Offer",
+                                "category": "Master's Degree",
+                                "priceSpecification": {
+                                    "@type": "PriceSpecification",
+                                    "price": "250000",
+                                    "priceCurrency": "NPR"
+                                }
+                            }
+                        }
                     }
                 },
                 {
@@ -94,7 +106,19 @@ export const portfolioData = {
                     "item": {
                         "@type": "Course",
                         "name": "Skills",
-                        "description": "Next.js, Tailwind CSS, HUGO, WordPress, Python, Machine Learning, Aws/Azure, SEO"
+                        "description": "Next.js, Tailwind CSS, HUGO, WordPress, Python, Machine Learning, Aws/Azure, SEO",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Self-Learned & Professional Experience"
+                        },
+                        "hasCourseInstance": {
+                            "@type": "CourseInstance",
+                            "courseMode": "online",
+                            "offers": {
+                                "@type": "Offer",
+                                "category": "Professional Skills"
+                            }
+                        }
                     }
                 },
                 {
@@ -103,7 +127,19 @@ export const portfolioData = {
                     "item": {
                         "@type": "Course",
                         "name": "Projects",
-                        "description": "Portfolio Website, Arduino/Raspberry Pi-based projects, Machine Learning Projects"
+                        "description": "Portfolio Website, Arduino/Raspberry Pi-based projects, Machine Learning Projects",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Personal & Academic Projects"
+                        },
+                        "hasCourseInstance": {
+                            "@type": "CourseInstance",
+                            "courseMode": "hybrid",
+                            "offers": {
+                                "@type": "Offer",
+                                "category": "Project Portfolio"
+                            }
+                        }
                     }
                 }
             ]
