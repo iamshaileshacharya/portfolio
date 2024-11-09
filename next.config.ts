@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
     appIsrStatus: false,
   },
   images: {
-    unoptimized: false,
+    unoptimized: false, // Default, enables optimization
+    formats: ['image/avif', 'image/webp'], // Explicitly specify formats
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   async headers() {
     return [

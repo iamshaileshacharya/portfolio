@@ -87,8 +87,6 @@ export default function RootLayout({
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
 
-        {/* Preload critical assets */}
-        <link rel="preload" href="/profile.jpg" as="image" />
       </head>
       <body className="antialiased min-h-screen">
         <div className="flex flex-col min-h-screen">
