@@ -6,11 +6,13 @@ import { portfolioData } from '../portfolioData'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Script from 'next/script'
 
+// Next.js Font Optimization
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap',
-  variable: '--font-inter'
+  variable: '--font-inter',
+  fallback: ['system-ui', 'arial']
 })
 
 export const metadata: Metadata = {
@@ -70,7 +72,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={`${inter.className} ${inter.variable}`}>
       <head>
         {/* Schema.org JSON-LD */}
         <Script
@@ -87,15 +89,6 @@ export default function RootLayout({
 
         {/* Preload critical assets */}
         <link rel="preload" href="/profile.jpg" as="image" />
-
-        {/* Optional: Add custom font preloading */}
-        <link
-          rel="preload"
-          href="/fonts/inter.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className="antialiased min-h-screen">
         <div className="flex flex-col min-h-screen">
