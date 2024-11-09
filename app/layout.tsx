@@ -3,7 +3,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { portfolioData } from '../portfolioData'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+
 import Script from 'next/script'
 
 // Next.js Font Optimization
@@ -91,7 +91,7 @@ export default function RootLayout({
       <body className="antialiased min-h-screen">
         <div className="flex flex-col min-h-screen">
           {children}
-          <SpeedInsights />
+
         </div>
       </body>
     </html>
