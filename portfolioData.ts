@@ -1,5 +1,3 @@
-// portfolioData.ts
-
 export const portfolioData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -66,7 +64,19 @@ export const portfolioData = {
                     "item": {
                         "@type": "Course",
                         "name": "Work Experience",
-                        "description": "Freelenacer, Web Developer, Student (2020-Present)"
+                        "description": "Freelenacer, Web Developer, Student (2020-Present)",
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "Various Organizations"
+                        },
+                        "hasCourseInstance": {
+                            "@type": "CourseInstance",
+                            "courseMode": "full-time",
+                            "offers": {
+                                "@type": "Offer",
+                                "category": "Professional Experience"
+                            }
+                        }
                     }
                 },
                 {
