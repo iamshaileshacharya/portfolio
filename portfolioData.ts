@@ -64,10 +64,12 @@ export const portfolioData = {
             "description": "Full Stack Web Developer specializing in modern web technologies and cloud architecture",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "url": "https://acharyashailesh.com.np"
+                "url": "https://acharyashailesh.com.np/",
+                "lastReviewed": "2023-11-10"
             },
             "occupationLocation": {
-                "@type": "Place",
+                "@type": "City",  // Changed from Place to City
+                "name": "Butwal",
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Butwal",
@@ -78,10 +80,13 @@ export const portfolioData = {
             },
             "estimatedSalary": [{
                 "@type": "MonetaryAmountDistribution",
+                "name": "Full Stack Developer Salary in Nepal",
                 "currency": "NPR",
                 "duration": "P1M",
                 "median": "100000",
                 "percentile10": "50000",
+                "percentile25": "75000",
+                "percentile75": "125000",
                 "percentile90": "150000"
             }]
         }
