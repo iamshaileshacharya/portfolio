@@ -105,9 +105,21 @@ export const portfolioData = {
             "skills": {
                 "@type": "ItemList",
                 "itemListElement": [
-                    "Web Development",
-                    "Cloud Architecture",
-                    "Machine Learning"
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": "Web Development"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": "Cloud Architecture"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": "Machine Learning"
+                    }
                 ]
             },
             "description": "Full Stack Web Developer specializing in modern web technologies and cloud architecture",
@@ -121,7 +133,7 @@ export const portfolioData = {
                     "contentUrl": "https://acharyashailesh.com.np/"
                 }
             },
-            "occupationLocation": {
+            "workLocation": {
                 "@type": "Place",
                 "address": {
                     "@type": "PostalAddress",
@@ -138,6 +150,7 @@ export const portfolioData = {
             },
             "estimatedSalary": {
                 "@type": "MonetaryAmountDistribution",
+                "name": "Full Stack Developer Salary in Nepal",
                 "currency": "NPR",
                 "duration": "P1M",
                 "median": 100000,
