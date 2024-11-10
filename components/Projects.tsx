@@ -35,7 +35,7 @@ const Projects: React.FC<ProjectsProps> = ({ isTouch }) => {
                         tags={['Arduino', 'Raspberry Pi', 'C++']}
                         image="/projects/Android_car_parking_monitoring_system.png"
                         isTouch={isTouch}
-                        githubUrl="https://github.com/yourusername/ai-chatbot"
+                        githubUrl="https://github.com/iamshaileshacharya/android-car-parking-system"
                     />
                     <ProjectCard
                         title="My portfolio website"
