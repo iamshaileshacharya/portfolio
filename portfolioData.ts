@@ -106,19 +106,16 @@ export const portfolioData = {
                 "@type": "ItemList",
                 "itemListElement": [
                     {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "item": "Web Development"
+                        "@type": "DefinedTerm",
+                        "name": "Web Development"
                     },
                     {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "item": "Cloud Architecture"
+                        "@type": "DefinedTerm",
+                        "name": "Cloud Architecture"
                     },
                     {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "item": "Machine Learning"
+                        "@type": "DefinedTerm",
+                        "name": "Machine Learning"
                     }
                 ]
             },
@@ -133,8 +130,9 @@ export const portfolioData = {
                     "contentUrl": "https://acharyashailesh.com.np/"
                 }
             },
-            "workLocation": {
-                "@type": "Place",
+            "occupationLocation": {
+                "@type": "City",
+                "name": "Butwal",
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Butwal",
@@ -146,6 +144,16 @@ export const portfolioData = {
                     "@type": "GeoCoordinates",
                     "latitude": "27.6866",
                     "longitude": "83.4323"
+                }
+            },
+            "workLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Butwal",
+                    "addressRegion": "Lumbini",
+                    "postalCode": "32907",
+                    "addressCountry": "NP"
                 }
             },
             "estimatedSalary": {
