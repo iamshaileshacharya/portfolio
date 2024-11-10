@@ -61,16 +61,29 @@ export const portfolioData = {
             "name": "Full Stack Web Developer",
             "occupationalCategory": "15-1254.00",
             "skills": "Web Development, Cloud Architecture, Machine Learning",
-            "estimatedSalary": {
-                "@type": "MonetaryAmount",
-                "currency": "NPR",
-                "value": {
-                    "@type": "QuantitativeValue",
-                    "minValue": 50000,
-                    "maxValue": 150000,
-                    "unitText": "MONTH"
+            "description": "Full Stack Web Developer specializing in modern web technologies and cloud architecture",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "url": "https://acharyashailesh.com.np"
+            },
+            "occupationLocation": {
+                "@type": "Place",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Butwal",
+                    "addressRegion": "Lumbini",
+                    "postalCode": "32907",
+                    "addressCountry": "NP"
                 }
-            }
+            },
+            "estimatedSalary": [{
+                "@type": "MonetaryAmountDistribution",
+                "currency": "NPR",
+                "duration": "P1M",
+                "median": "100000",
+                "percentile10": "50000",
+                "percentile90": "150000"
+            }]
         }
     ],
     "makesOffer": [
