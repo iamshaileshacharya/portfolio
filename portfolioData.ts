@@ -30,7 +30,7 @@ export const portfolioData = {
             "name": "Tribhuvan University",
             "sameAs": "https://cdcsit.edu.np/",
             "award": "MSc. Computer Science and Information Technology",
-            "startDate": "2023",
+            "startDate": "2023-01-01",
             "endDate": "Present"
         },
         {
@@ -38,22 +38,29 @@ export const portfolioData = {
             "name": "Butwal Multiple Campus",
             "sameAs": "https://bumc.edu.np/",
             "award": "BSc. Computer Science and Information Technology",
-            "startDate": "2016",
-            "endDate": "2020"
+            "startDate": "2016-01-01",
+            "endDate": "2020-12-31"
         }
     ],
     "knowsAbout": [
-        "AWS/Azure",
-        "Git",
-        "HTML/CSS",
-        "Python",
-        "Machine Learning",
-        "Cloud Computing",
-        "HUGO",
-        "Next.js",
-        "Tailwind CSS",
-        "SEO",
-        "WordPress"
+        {
+            "@type": "DefinedTerm",
+            "name": "Cloud Computing",
+            "termCode": "cloud",
+            "includes": ["AWS", "Azure"]
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Web Development",
+            "termCode": "web",
+            "includes": ["HTML/CSS", "Next.js", "Tailwind CSS"]
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Programming Languages",
+            "termCode": "programming",
+            "includes": ["Python", "JavaScript", "TypeScript"]
+        }
     ],
     "hasOccupation": [
         {
@@ -68,7 +75,7 @@ export const portfolioData = {
                 "lastReviewed": "2023-11-10"
             },
             "occupationLocation": {
-                "@type": "City",  // Changed from Place to City
+                "@type": "City",
                 "name": "Butwal",
                 "address": {
                     "@type": "PostalAddress",
@@ -101,7 +108,8 @@ export const portfolioData = {
                 "provider": {
                     "@type": "Person",
                     "name": "Shailesh Acharya"
-                }
+                },
+                "serviceType": "Web Development"
             }
         },
         {
@@ -113,92 +121,131 @@ export const portfolioData = {
                 "provider": {
                     "@type": "Person",
                     "name": "Shailesh Acharya"
-                }
+                },
+                "serviceType": "Cloud Computing"
             }
         }
     ],
     "workExperience": [
         {
-            "@type": "WorkPosition",
-            "name": "Volunteer",
-            "worksFor": {
+            "@type": "EmployeeRole",
+            "roleName": "Volunteer",
+            "employedAt": {
                 "@type": "Organization",
                 "name": "Python Nepal"
             },
-            "startDate": "2022",
-            "endDate": "2023",
+            "startDate": "2022-01-01",
+            "endDate": "2023-12-31",
             "description": "Discuss, share, and learn about Python use cases in the AI, deep learning, and machine learning fields."
         },
         {
-            "@type": "WorkPosition",
-            "name": "Data Expedition",
-            "worksFor": {
+            "@type": "EmployeeRole",
+            "roleName": "Data Researcher",
+            "employedAt": {
                 "@type": "Organization",
                 "name": "oknp.org"
             },
-            "startDate": "2021",
-            "endDate": "2021",
+            "startDate": "2021-01-01",
+            "endDate": "2021-12-31",
             "description": "Involved in research, advocacy, training, workshops, and developing tools related to open knowledge."
         },
         {
-            "@type": "WorkPosition",
-            "name": "Intern",
-            "worksFor": {
+            "@type": "EmployeeRole",
+            "roleName": "Technical Support Intern",
+            "employedAt": {
                 "@type": "Organization",
                 "name": "WorldLink"
             },
-            "startDate": "2019",
-            "endDate": "2020",
+            "startDate": "2019-06-01",
+            "endDate": "2020-06-30",
             "description": "Worked on a team responsible for providing Tech Support to clients regarding Internet connection and IPTV."
         }
     ],
-    "hasSkill": {
-        "@type": "DefinedTerm",
-        "termCode": "Technical Skills",
-        "skills": [
-            {
+    "hasSkill": [
+        {
+            "@type": "Skill",
+            "name": "Web Development",
+            "description": "Expert level proficiency in web development technologies",
+            "competencyLevel": "Expert",
+            "category": {
                 "@type": "DefinedTerm",
-                "termCode": "Web Development",
-                "proficiencyLevel": "Expert",
-                "skills": ["Next.js", "HTML/CSS", "JavaScript", "Tailwind CSS"]
+                "termCode": "web-development",
+                "name": "Web Development Technologies"
             },
-            {
+            "subSkills": ["Next.js", "HTML/CSS", "JavaScript", "Tailwind CSS"]
+        },
+        {
+            "@type": "Skill",
+            "name": "Cloud Computing",
+            "description": "Advanced level proficiency in cloud technologies",
+            "competencyLevel": "Advanced",
+            "category": {
                 "@type": "DefinedTerm",
-                "termCode": "Cloud Computing",
-                "proficiencyLevel": "Advanced",
-                "skills": ["AWS", "Azure"]
+                "termCode": "cloud-computing",
+                "name": "Cloud Technologies"
             },
-            {
+            "subSkills": ["AWS", "Azure", "Cloud Architecture"]
+        },
+        {
+            "@type": "Skill",
+            "name": "Programming",
+            "description": "Expert level proficiency in programming languages",
+            "competencyLevel": "Expert",
+            "category": {
                 "@type": "DefinedTerm",
-                "termCode": "Programming",
-                "proficiencyLevel": "Expert",
-                "skills": ["Python", "JavaScript", "TypeScript"]
-            }
-        ]
-    },
+                "termCode": "programming",
+                "name": "Programming Languages"
+            },
+            "subSkills": ["Python", "JavaScript", "TypeScript"]
+        }
+    ],
     "mainEntityOfPage": {
         "@type": "WebPage",
         "name": "Shailesh Acharya - Portfolio",
         "description": "Personal portfolio website of Shailesh Acharya, a Full Stack Developer and Master's Student",
-        "significantLink": [
+        "subjectOf": [
             {
-                "@type": "WebPage",
+                "@type": "CreativeWork",
                 "name": "Portfolio Website",
                 "url": "https://github.com/iamshaileshacharya/My-portfolio",
-                "description": "A personal portfolio website built with Next.js, Framer Motion and Tailwind CSS."
+                "description": "A personal portfolio website built with Next.js, Framer Motion and Tailwind CSS.",
+                "datePublished": "2023-01-01",
+                "programmingLanguage": ["JavaScript", "React", "Next.js"]
             },
             {
-                "@type": "WebPage",
+                "@type": "CreativeWork",
                 "name": "Email Spam Detection",
                 "url": "https://github.com/iamshaileshacharya/python-spam-detection",
-                "description": "A machine learning model with GUI to detect spam emails using Python."
+                "description": "A machine learning model with GUI to detect spam emails using Python.",
+                "datePublished": "2022-01-01",
+                "programmingLanguage": ["Python"]
             },
             {
-                "@type": "WebPage",
+                "@type": "CreativeWork",
                 "name": "Smart Car Parking System",
                 "url": "https://github.com/yourusername/ai-chatbot",
-                "description": "An intelligent car parking monitoring system using Arduino and Raspberry Pi."
+                "description": "An intelligent car parking monitoring system using Arduino and Raspberry Pi.",
+                "datePublished": "2021-01-01",
+                "programmingLanguage": ["Python", "C++"]
             }
         ]
-    }
+    },
+    "potentialAction": [
+        {
+            "@type": "ContactAction",
+            "name": "Contact Shailesh Acharya",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "mailto:me@acharyashailesh.com.np"
+            }
+        },
+        {
+            "@type": "ViewAction",
+            "name": "View Portfolio",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://acharyashailesh.com.np"
+            }
+        }
+    ]
 }
